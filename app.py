@@ -1,25 +1,9 @@
 from flask import Flask, render_template, flash, redirect, url_for, session, request, logging
 from data import Articles
-#TO FIX flask_mysqldb INSTALL ERRORS FOR 3 FILES (libmysqlclient.18.dylib, libssl.1.0.0.dylib, and libcrypto.1.0.0.dylib)
-# 0 - MUST have mysqlclient installed
-# 1 - in terminal - mdfind libmysqlclient | grep .18.
-# 2 - copy the output
-# 3 - sudo ln -s [the output from previous command] /usr/local/lib/libmysqlclient.18.dylib
 from flask_mysqldb import MySQL
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from passlib.hash import sha256_crypt
 from functools import wraps
-
-# MySQL Connector is replacement option for flask_mysql
-# Install with pip3 install mysql-connector-python
-# import mysql.connector
-# mydb = mysql.connector.connect(
-#   host="localhost",
-#   user="root",
-#   passwd="Bye>6BkG&2",
-#   auth_plugin="mysql_native_password"
-# )
-# print(mydb)
 
 app = Flask(__name__)
 
